@@ -1,7 +1,34 @@
 {
-  "name": "reproduction-react-18-builder-issue",
-  "version": "1.0.0",
+  "name": "example-react-18",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
   "main": "index.js",
-  "author": "Glenn Van De Putte <glenn.vandeputte@bagaar.be>",
-  "license": "MIT"
+  "scripts": {
+    "storybook": "NODE_PATH=$(pwd)/node_modules start-storybook --port 6018",
+    "build-storybook": "NODE_PATH=$(pwd)/node_modules build-storybook",
+    "preview-storybook": "http-server storybook-static --port 6018 --silent",
+    "test": "wait-on tcp:6018 && test-storybook --url 'http://localhost:6018'",
+    "test-ci": "run-p --race test preview-storybook"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "6.5.16",
+    "@storybook/addon-docs": "6.5.16",
+    "@storybook/addon-essentials": "6.5.16",
+    "@storybook/builder-vite": "0.4.2",
+    "@storybook/react": "6.5.16",
+    "@storybook/test-runner": "0.1.0",
+    "@vitejs/plugin-react": "3.1.0",
+    "http-server": "^14.1.0",
+    "jest": "^27.5.1",
+    "npm-run-all": "^4.1.5",
+    "vite": "4.1.1",
+    "wait-on": "^6.0.1"
+  }
 }
