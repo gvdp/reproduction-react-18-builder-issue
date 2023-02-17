@@ -1,0 +1,7 @@
+{
+  "name": "reproduction-react-18-builder-issue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Glenn Van De Putte <glenn.vandeputte@bagaar.be>",
+  "license": "MIT"
+}
